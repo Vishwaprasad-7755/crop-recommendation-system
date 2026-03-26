@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture Chatbot</title>
+</head>
+
+<body>
+    <h1>Agriculture Chatbot</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="query">Enter your question:</label>
+        <input type="text" id="query" name="query" placeholder="Type your question here" required>
+        <br>
+        <label for="city">City (for weather info):</label>
+        <input type="text" id="city" name="city" placeholder="Enter city name">
+        <br>
+        <button type="submit">Ask</button>
+    </form>
+    <hr>
+    {% if response %}
+    <h2>Response:</h2>
+    <p><strong>Bot:</strong> {{ response }}</p>
+    {% endif %}
+</body>
+
+</html>

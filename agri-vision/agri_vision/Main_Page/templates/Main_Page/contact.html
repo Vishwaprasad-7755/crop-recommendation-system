@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    {% load static %}
+    <style>
+        /* styles.css */
+        body {
+            /* font-family: Arial, sans-serif; */
+            margin: 0;
+            padding: 0;
+            background-color: #98D8EF;
+            background-image: url("{% static 'images/contact1.jpg' %}");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #C5BAFF;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .contact-form label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: black;
+            color: whitesmoke;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #45a049;
+        }
+
+        .contact-form button:focus {
+            outline: none;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 60px;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: black;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: black;
+            font-size: 1.09rem;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 60px;
+            /* background: url('https://images.unsplash.com/photo-1584270354949-1f51c50fea3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200') no-repeat center center/cover; */
+            color: white;
+        }
+
+        header h1 {
+            font-size: 1.9rem;
+            padding-top: 40px;
+            color: black;
+        }
+
+        header p {
+            font-size: 1rem;
+            margin-bottom: 30px;
+        }
+
+
+        li {
+            position: relative;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px 0;
+            list-style: none;
+        }
+
+        li:hover .dropdown {
+            display: block;
+            /* Show dropdown on hover */
+            width: 200px;
+        }
+
+        .dropdown li a {
+            padding: 8px 10px;
+            text-decoration: none;
+            color: black;
+            font-weight: normal;
+            font-size: 0.9rem;
+
+        }
+    </style>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">AgriVision</div>
+            <ul>
+                <li><a href="/index" class="font-bold">Homepage</a></li>
+                <li><a href="/index/about/">About Us</a></li>
+                <li><a href="/index/service/">Our Services</a></li>
+                <li><a href="">Contact Us</a></li>
+            </ul>
+        </nav>
+        <h1>Contact Us</h1>
+    </header>
+    <div class="contact-container">
+
+        <form action="mailto:lohithkumarcm1113@gmail.com" method="POST" enctype="text/plain" class="contact-form">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+    <footer class="bg-gray-900 text-gray-400 text-center py-4">
+        <p>&copy; 2025 <span class="text-green-400 font-semibold">AgriVision</span>. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

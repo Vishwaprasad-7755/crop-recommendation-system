@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fertilizer Recommendation</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/fr.css' %}">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #98D8EF;
+            background-image: url("{% static 'images/fr.jpg' %}");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">AgriVision</div>
+            <ul>
+                <li><a href="/index">Homepage</a></li>
+                <li><a href="#">About Us</a></li>
+                <li>
+                    <a href="/index/service/">Our Services</a>
+                    <ul class="dropdown">
+                        <li><a href="/recommend-crop/">Crop Recommendation</a></li>
+                        <li><a href="/rainfall/">Weather Forecast</a></li>
+                        <li><a href="/crop-yield/">Crop Yield</a></li>
+                    </ul>
+                </li>
+                <li><a href="/index/contact/">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="main-content">
+        <h1>Fertilizer Recommendation</h1>
+        <p>Achieve optimal harvests by selecting crops perfectly aligned with your soil type and weather conditions.
+            Boost efficiency and yield with smart suggestions</p>
+        <div class="container">
+            <h3>Enter the values to get results </h3>
+            <form id="fertiForm" method="POST" action="/recommend-fertilizer/">
+                {% csrf_token %}
+                <label for="temperature">Temperature (°C):</label>
+                <input type="number" step="any" name="temperature" required>
+
+                <label for="humidity">Humidity (%):</label>
+                <input type="number" step="any" name="humidity" required>
+
+                <label for="moisture">Moisture (%):</label>
+                <input type="number" step="any" name="moisture" required>
+
+                <label for="nitrogen">Nitrogen (N):</label>
+                <input type="number" step="any" name="nitrogen" required>
+
+                <label for="potassium">Potassium (K):</label>
+                <input type="number" step="any" name="potassium" required>
+
+                <label for="phosphorous">Phosphorous (P):</label>
+                <input type="number" step="any" name="phosphorous" required>
+
+                <label for="soil_type">Soil Type:</label>
+                <select name="soil_type" required>
+                    <option value=0>Black</option>
+                    <option value=1>Clayey</option>
+                    <option value=2>Loamy</option>
+                    <option value=3>Red</option>
+                    <option value=4>Sandy</option>
+                </select>
+                <label for="crop_type">Crop Type:</label>
+                <select name="crop_type" required>
+                    <option value=0>Barley</option>
+                    <option value=1>Cotton</option>
+                    <option value=2>Ground Nuts</option>
+                    <option value=3>Maize</option>
+                    <option value=4>Millets</option>
+                    <option value=5>Oil seeds</option>
+                    <option value=6>Paddy</option>
+                    <option value=7>Pulses</option>
+                    <option value=8>Sugarcane</option>
+                    <option value=9>Tobacco</option>
+                    <option value=10>Wheat</option>
+                    <option value=11>Coffee</option>
+                    <option value=12>Kidney Beans</option>
+                    <option value=13>Orange</option>
+                    <option value=14>Pomegranate</option>
+                    <option value=15>Rice</option>
+                    <option value=16>Watermelon</option>
+                </select>
+
+                <button type="button" id="submitButton">Recommend Fertilizer</button>
+            </form>
+            <div class="result" id="result"></div>
+        </div>
+
+    </div>
+    <footer class="bg-gray-900 text-gray-400 text-center py-4">
+        <p>&copy; 2025 <span class="text-green-400 font-semibold">AgriVision</span>. All rights reserved.</p>
+    </footer>
+    <script src="{% static 'js/fr.js' %}"></script>
+</body>
+
+</html>

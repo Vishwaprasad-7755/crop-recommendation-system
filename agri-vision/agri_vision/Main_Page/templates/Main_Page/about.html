@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - AgriVision</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+    <style>
+        body {
+            background-image: url("{% static 'images/aboutus.jpg' %}");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body class="bg-[#FCC6FF] text-white">
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <div class="logo">AgriVision</div>
+            <ul>
+                <li><a href="/index" class="font-bold">Homepage</a></li>
+                <li><a href="/index/about/">About Us</a></li>
+                <li><a href="/index/service/">Our Services</a></li>
+                <li><a href="/index/contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- About Us Section -->
+    <div
+        class="container mx-auto w-[1400px] pl-6 pr-6 px-6 py-4 flex flex-col md:flex-row items-center  rounded-lg ml-13">
+        <!-- Left Content -->
+        <div class="md:w-1/2">
+            <h1 class="text-4xl font-bold mb-4" style="color: #B7B1F2;">About Us</h1>
+            <p class="text-lg text-white mb-6">
+                Welcome to <strong>AgriVision</strong>, an innovative agricultural platform developed by final-year
+                students from
+                <strong>JSS Science and Technology University, Mysuru</strong>. Our mission is to empower farmers with
+                smart, data-driven solutions to improve their productivity and decision-making.
+            </p>
+            <h2 class="text-2xl font-semibold  mb-3" style="color: #B7B1F2;">Our Services</h2>
+            <ul class="list-disc pl-6 text-white space-y-2">
+                <li><strong>🌱 Crop Recommendation:</strong> Get the best crop suggestions based on soil conditions.
+                </li>
+                <li><strong>🌾 Fertilizer Recommendation:</strong> Optimize soil health with suitable fertilizer
+                    choices.</li>
+                <li><strong>🌦 Weather Forecast:</strong> Stay informed with real-time and 3-day weather predictions.
+                </li>
+                <li><strong>💬 Farmer Chatbot:</strong> Ask agricultural queries and receive instant AI-powered
+                    responses.</li>
+                <li><strong>🦠 Plant Disease Detection:</strong> Upload an image to diagnose plant diseases and get
+                    treatment advice.</li>
+            </ul>
+            <div class="mt-8">
+                <a href="/index/contact"
+                    class="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+
+    </div>
+    <footer class="bg-gray-900 text-gray-400 text-center py-4">
+        <p>&copy; 2025 <span class="text-green-400 font-semibold">AgriVision</span>. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
