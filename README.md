@@ -46,7 +46,5 @@
 4. Replace the API key in `settings.py` under:  
 WEATHER\_API\_KEY = "your\_api\_key\_here"
 
-\---
 
-## 
 
